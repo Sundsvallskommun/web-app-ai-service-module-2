@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sundsvalls kommun service module</title>
+    <style>
+      html {
+        background-color: white;
+      }
+      .wrapper {
+        max-width: 1400px;
+        margin: 24px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script type="module" src="/src/main.tsx"></script>
+    <div class="wrapper">
+      <div
+        class="sk-service-assistant"
+        id="sk-service-assistant-myapp"
+      ></div>
+    </div>
+  </body>
+</html>
