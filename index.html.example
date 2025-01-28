@@ -20,8 +20,8 @@
     <script type="module" src="/src/main.tsx"></script>
     <div class="wrapper">
       <div
-        class="sk-service-assistant"
-        id="sk-service-assistant-myapp"
+        data-shadow="false"
+        id="sk-service-assistant"
       ></div>
     </div>
   </body>
