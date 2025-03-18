@@ -9,9 +9,8 @@
       html {
         background-color: white;
       }
-      .wrapper {
-        max-width: 1400px;
-        margin: 24px auto;
+      body {
+        margin: 0;
       }
     </style>
   </head>

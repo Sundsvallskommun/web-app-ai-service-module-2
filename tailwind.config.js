@@ -18,6 +18,8 @@ export default {
   blocklist: [],
 
   presets: [
-    Core({ plugin: { cssBase: false, components: ["AIServiceModule"] } }),
+    Core({
+      plugin: { cssBase: false, components: ["AIServiceModule", "Logo"] },
+    }),
   ],
 };

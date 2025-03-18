@@ -1,14 +1,39 @@
 import { AIServiceModule, useAssistantStore } from "@sk-web-gui/ai";
 import { Avatar, Icon } from "@sk-web-gui/react";
 import { useMediaQuery } from "usehooks-ts";
-import { DynamicIcon } from "lucide-react/dynamic";
-
+import { DynamicIcon, type IconName } from "lucide-react/dynamic";
 interface AssistantProps {
   children?: JSX.Element | JSX.Element[];
 }
 
 export const Assistant: React.FC<AssistantProps> = ({ children }) => {
-  const options = useAssistantStore((state) => state.options);
+  const options: {
+    questionsTitle?: string;
+    questions?: string[];
+    variant?: "primary" | "secondary";
+    title?: string;
+    label?: string;
+    readmore?: {
+      text?: string;
+      link?: {
+        text: string;
+        url: string;
+      };
+    };
+    icon?: IconName;
+    inverted?: boolean;
+    color?:
+      | "primary"
+      | "tertiary"
+      | "info"
+      | "success"
+      | "warning"
+      | "error"
+      | "vattjom"
+      | "gronsta"
+      | "bjornstigen"
+      | "juniskar";
+  } = useAssistantStore((state) => state.options);
   const isMobile = useMediaQuery(`screen and (max-width: 1023px)`);
 
   const props: React.ComponentPropsWithoutRef<

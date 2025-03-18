@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+div[data-nomodule="true"] .sk-ai-service-module {
+  @apply !shadow-none border-0 bg-transparent;
+}

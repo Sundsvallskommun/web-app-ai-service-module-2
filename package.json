@@ -12,9 +12,9 @@
     "copybuild": "node copybuild"
   },
   "dependencies": {
-    "@sk-web-gui/ai": "^0.10.3",
-    "@sk-web-gui/core": "^3.9.1",
-    "@sk-web-gui/react": "^1.2.36",
+    "@sk-web-gui/ai": "^1.0.1",
+    "@sk-web-gui/core": "^3.11.1",
+    "@sk-web-gui/react": "^1.4.0",
     "@types/node": "^22.10.7",
     "lucide-react": "^0.473.0",
     "react": "^18.2.0",
