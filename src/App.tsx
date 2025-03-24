@@ -164,9 +164,13 @@ function App({
           import.meta.env.VITE_INVERTED;
 
   return (
-    <GuiProvider htmlFontSize={16} colorScheme={ColorSchemeMode.System}>
+    <GuiProvider
+      htmlFontSize={16}
+      colorScheme={import.meta.env.VITE_COLOR_SCHEME ?? ColorSchemeMode.System}
+    >
       {fullscreen ? (
         <div
+          id="sk-service-assistant-fullscreen"
           className={cx(
             "w-full flex justify-center items-start min-h-screen",
             getBackgroundColor()
