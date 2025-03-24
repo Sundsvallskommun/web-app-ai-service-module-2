@@ -50,6 +50,7 @@ export const Assistant: React.FC<AssistantProps> = ({ children }) => {
       <Avatar
         size="md"
         className="w-40 h-40"
+        color="primary"
         imageElement={
           <Icon
             color={options.inverted ? options.color : undefined}

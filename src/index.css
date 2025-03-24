@@ -6,4 +6,16 @@
 
 div[data-nomodule="true"] .sk-ai-service-module {
   @apply !shadow-none border-0 bg-transparent;
+  &[data-variant="primary"] {
+    &[data-inverted="false"] {
+      .sk-ai-service-module-questions {
+        @apply text-light-primary;
+      }
+    }
+    &[data-inverted="true"] {
+      .sk-ai-service-module-questions {
+        @apply text-dark-secondary;
+      }
+    }
+  }
 }
