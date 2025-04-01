@@ -2,8 +2,10 @@ import { AIServiceModule, useAssistantStore } from "@sk-web-gui/ai";
 import { Avatar, Icon } from "@sk-web-gui/react";
 import { useMediaQuery } from "usehooks-ts";
 import { DynamicIcon, type IconName } from "lucide-react/dynamic";
+import React from "react";
+
 interface AssistantProps {
-  children?: JSX.Element | JSX.Element[];
+  children?: React.JSX.Element | React.JSX.Element[];
 }
 
 export const Assistant: React.FC<AssistantProps> = ({ children }) => {
