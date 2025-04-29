@@ -173,11 +173,12 @@ function App({
           id="sk-service-assistant-fullscreen"
           className={cx(
             "w-full flex justify-center items-start min-h-screen",
-            getBackgroundColor()
+            getBackgroundColor(),
+            {["max-h-screen overflow-y-auto"]: fullscreen}
           )}
         >
           <div
-            className="max-w-[1440px] p-32 w-full flex flex-col items-center"
+            className="max-w-[1440px] p-16 md:p-32 w-full flex flex-col items-center"
             data-nomodule={noModule}
           >
             {(import.meta.env.VITE_PAGE_TITLE || showLogo) && (
