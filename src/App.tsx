@@ -21,14 +21,21 @@ function App({
   assistantId?: string | null;
   children?: string; //InnerHTML;
 }) {
-  const [setSettings, setInfo, setStream, setApiBaseUrl, setOptions] =
-    useAssistantStore((state) => [
-      state.setSettings,
-      state.setInfo,
-      state.setStream,
-      state.setApiBaseUrl,
-      state.setOptions,
-    ]);
+  const [
+    setSettings,
+    setInfo,
+    setStream,
+    setApiBaseUrl,
+    setOptions,
+    setApiKey,
+  ] = useAssistantStore((state) => [
+    state.setSettings,
+    state.setInfo,
+    state.setStream,
+    state.setApiBaseUrl,
+    state.setOptions,
+    state.setApikey,
+  ]);
   const newSession = useSessions((state) => state.newSession);
 
   const [loaded, setLoaded] = useState<boolean>(false);
@@ -43,11 +50,14 @@ function App({
 
   useEffect(() => {
     setAssistantStoreName(`sk-ai-sa-${assistantId}`);
-
+    const apiKey = import.meta.env.VITE_APIKEY;
+    if (apiKey) {
+      setApiKey(apiKey);
+    }
     const settings: AssistantSettings = {
       user: user || "",
       assistantId: assistantId || "",
-
+      is_group_chat: import.meta.env.VITE_GROUPCHAT?.toLowerCase() === "true",
       hash: hash || "",
       app: import.meta.env.VITE_APPLICATION,
     };
@@ -113,6 +123,7 @@ function App({
     newSession,
     setStream,
     setApiBaseUrl,
+    setApiKey,
   ]);
 
   const getBackgroundColor = () => {
@@ -152,7 +163,6 @@ function App({
       }
     }
   };
-
   const showLogo = import.meta.env.VITE_SHOW_LOGO?.toLowerCase() === "true";
   const fullscreen = import.meta.env.VITE_FULLSCREEN?.toLowerCase() === "true";
   const noModule =
@@ -173,12 +183,11 @@ function App({
           id="sk-service-assistant-fullscreen"
           className={cx(
             "w-full flex justify-center items-start min-h-screen",
-            getBackgroundColor(),
-            {["max-h-screen overflow-y-auto"]: fullscreen}
+            getBackgroundColor()
           )}
         >
           <div
-            className="max-w-[1440px] p-16 md:p-32 w-full flex flex-col items-center"
+            className="max-w-[1440px] p-32 w-full flex flex-col items-center"
             data-nomodule={noModule}
           >
             {(import.meta.env.VITE_PAGE_TITLE || showLogo) && (
@@ -191,6 +200,7 @@ function App({
                         "true"
                       }
                       title={import.meta.env.VITE_PAGE_TITLE}
+                      subtitle={import.meta.env.VITE_PAGE_SUBTITLE}
                       variant={
                         !!import.meta.env.VITE_PAGE_TITLE ? "service" : "logo"
                       }
