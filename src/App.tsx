@@ -58,6 +58,8 @@ function App({
       user: user || "",
       assistantId: assistantId || "",
       is_group_chat: import.meta.env.VITE_GROUPCHAT?.toLowerCase() === "true",
+      group_chat_assistants:
+        import.meta.env.VITE_GROUPCHAT_ASSISTANTS?.toLowerCase() === "true",
       hash: hash || "",
       app: import.meta.env.VITE_APPLICATION,
     };
@@ -75,6 +77,7 @@ function App({
         import.meta.env.VITE_ASSISTANT_AVATAR || "assets/assistanticon.png"
       }`,
     };
+    console.log("🚀 ~ App ~ info:", info);
 
     const options = {
       title:
