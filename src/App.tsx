@@ -28,6 +28,7 @@ function App({
     setApiBaseUrl,
     setOptions,
     setApiKey,
+    setConversationVersion,
   ] = useAssistantStore((state) => [
     state.setSettings,
     state.setInfo,
@@ -35,6 +36,7 @@ function App({
     state.setApiBaseUrl,
     state.setOptions,
     state.setApikey,
+    state.setConversationVersion,
   ]);
   const newSession = useSessions((state) => state.newSession);
 
@@ -54,6 +56,7 @@ function App({
     if (apiKey) {
       setApiKey(apiKey);
     }
+    setConversationVersion(2);
     const settings: AssistantSettings = {
       user: user || "",
       assistantId: assistantId || "",
@@ -77,7 +80,6 @@ function App({
         import.meta.env.VITE_ASSISTANT_AVATAR || "assets/assistanticon.png"
       }`,
     };
-    console.log("🚀 ~ App ~ info:", info);
 
     const options = {
       title:
@@ -186,7 +188,7 @@ function App({
           id="sk-service-assistant-fullscreen"
           className={cx(
             "w-full flex justify-center items-start min-h-screen",
-            getBackgroundColor()
+            getBackgroundColor(),
           )}
         >
           <div
@@ -218,7 +220,7 @@ function App({
             <div
               className={cx(
                 "px-0 lg:px-32 w-full",
-                questions?.length > 0 ? "max-w-full" : "max-w-[1000px]"
+                questions?.length > 0 ? "max-w-full" : "max-w-[1000px]",
               )}
             >
               <Suspense fallback="loading">

@@ -8,36 +8,35 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview",
-    "copybuild": "node copybuild"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@sk-web-gui/ai": "^4.3.3",
-    "@sk-web-gui/core": "^4.5.0",
-    "@sk-web-gui/react": "^3.0.12",
-    "lucide-react": "^1.8.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
+    "@sk-web-gui/ai": "^4.4.2",
+    "@sk-web-gui/core": "^4.5.1",
+    "@sk-web-gui/react": "^3.0.14",
+    "lucide-react": "^1.14.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "react-html-parser": "^2.0.2",
     "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
-    "@types/node": "^24.12.2",
+    "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/react-html-parser": "^2.0.7",
-    "@typescript-eslint/eslint-plugin": "^8.58.2",
-    "@typescript-eslint/parser": "^8.58.2",
+    "@typescript-eslint/eslint-plugin": "^8.59.2",
+    "@typescript-eslint/parser": "^8.59.2",
     "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.5.0",
     "copy-file": "^11.1.0",
-    "cssnano": "^7.1.5",
-    "eslint": "^10.2.1",
+    "cssnano": "^8.0.0",
+    "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "postcss": "^8.5.10",
     "tailwindcss": "^3.4.19",
     "typescript": "^6.0.3",
-    "vite": "^8.0.9"
+    "vite": "^8.0.11"
   }
 }
