@@ -63,7 +63,7 @@ function App({
       is_group_chat: import.meta.env.VITE_GROUPCHAT?.toLowerCase() === "true",
       group_chat_assistants:
         import.meta.env.VITE_GROUPCHAT_ASSISTANTS?.toLowerCase() === "true",
-      hash: hash || "",
+      hash: hash || import.meta.env?.VITE_HASH || "",
       app: import.meta.env.VITE_APPLICATION,
     };
 
@@ -187,7 +187,7 @@ function App({
         <div
           id="sk-service-assistant-fullscreen"
           className={cx(
-            "w-full flex justify-center items-start min-h-screen",
+            "w-full flex justify-center items-start min-h-screen overflow-y-auto pb-32",
             getBackgroundColor(),
           )}
         >

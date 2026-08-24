@@ -41,6 +41,7 @@ export const Assistant: React.FC<AssistantProps> = ({ children }) => {
   const props: React.ComponentPropsWithoutRef<
     typeof AIServiceModule.Component
   > = {
+    showReferences: import.meta.env?.VITE_SHOW_REFERENCES === "true",
     isMobile,
     questionsTitle: options?.questionsTitle,
     questions: options?.questions,

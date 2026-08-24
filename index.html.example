@@ -8,6 +8,7 @@
     <style>
       html {
         background-color: white;
+        overflow: hidden;
       }
       body {
         margin: 0;
