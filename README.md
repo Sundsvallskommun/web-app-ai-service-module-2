@@ -35,7 +35,11 @@ You can add additional info into the assistant like this:
 
 - Installation
 
-Run `yarn install`
+Run `yarn install --frozen-lockfile`.
+
+Direct dependencies use exact versions. To update a dependency, run `yarn add --exact package@x.y.z`
+with the version you want. Add `--dev` for development dependencies. Commit `package.json` and
+`yarn.lock` together.
 
 - For development
 
